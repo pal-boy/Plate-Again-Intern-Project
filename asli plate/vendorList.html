@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor List Screen</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="vendor-list bg-white h-screen ">
+    <div class="px-4 py-2">
+      <div class="flex justify-between items-center mb-4">
+        <input type="text" class="w-full px-4 py-2 border rounded-lg" placeholder="Search">
+      </div>
+      <div class="mb-4">
+        <h2 class="text-xl font-bold">Near by Vendors</h2>
+        <div class="mt-4">
+          <!-- Vendor Item -->
+          <div class="flex items-center bg-white shadow-md rounded-lg p-4 mb-4">
+            <img src="vendor-image-path" alt="Vendor Image" class="w-16 h-16 object-cover rounded-full mr-4">
+            <div>
+              <h3 class="text-lg font-bold">Nourish to Flourish</h3>
+              <p class="text-gray-500">Saket, Delhi</p>
+              <p class="text-yellow-500">★★★★☆</p>
+            </div>
+          </div>
+          <div class="flex items-center bg-white shadow-md rounded-lg p-4 mb-4">
+            <img src="vendor-image-path" alt="Vendor Image" class="w-16 h-16 object-cover rounded-full mr-4">
+            <div>
+              <h3 class="text-lg font-bold">Rahul Sood</h3>
+              <p class="text-gray-500">Gurugram, Haryana</p>
+              <p class="text-yellow-500">★★★★☆</p>
+            </div>
+          </div>
+          <!-- Add more vendor items as needed -->
+        </div>
+      </div>
+    </div>
+    <div class="fixed bottom-0 w-full bg-white shadow-inner">
+      <div class="flex justify-around py-2">
+        <button class="text-gray-500">Home</button>
+        <button class="text-yellow-500">Vendor</button>
+        <button class="text-gray-500">Order</button>
+        <button class="text-gray-500">Profile</button>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
