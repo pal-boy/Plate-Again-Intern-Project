@@ -9,15 +9,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-  <header>
+  <header class="sticky top-0">
     <!-- Navbar code started here -->
-    <nav class="bg-[#5fc3a2] p-4">
+
+    <nav class="bg-[#d99054] p-4">
       <ul class="list-none flex justify-around items-center gap-5 text-white text-xl font-sans">
         <a href="#" class="flex">
           <span><i class="fa-solid fa-house"></i></span>
           <li>Home</li>
         </a>
-        <a href="#" class="flex">
+        <a href="./vendorDetails.html" class="flex">
           <span><i class="fa-solid fa-truck"></i></span>
           <li>Vendor</li>
         </a>
@@ -30,12 +31,59 @@
           <li>Profile</li>
         </a>
         <a href="#">
-          <li><i class="fa-solid fa-magnifying-glass mr-2"></i><input class="p-1 rounded-lg font-sans text-xl" type="text" placeholder="Search"></li>
+          <li><i class="fa-solid fa-magnifying-glass mr-2"></i><input class="text-black p-1 rounded-lg font-sans text-xl" type="text" placeholder="Search"></li>
         </a>
       </ul>
     </nav>
     <!-- Navbar code ends here -->
   </header>
-  
+
+
+  <div class="main-image flex justify-center">
+    <img class="w-[900px] h-[400px]" src="https://pwonlyias.com/wp-content/uploads/2024/03/untitled-96-6607e08cacceb.webp" alt="Food waste vs Food loss image">
+    <!-- <img class="w-[802px] h-[342px]" src="https://scontent.fdel6-1.fna.fbcdn.net/v/t39.30808-6/433121311_726408302998563_7579462537346072588_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=rWE74DsMg3IQ7kNvgFCBwcT&_nc_ht=scontent.fdel6-1.fna&oh=00_AYDPkYP4Sb4DRr_DBYj_W0LYwHNzPbTJyWkYh3vpnS-Kqw&oe=66A9071B" alt=""> -->
+  </div>
+
+
+<!-- Vendors Section code starts here -->
+  <div class="mb-4">
+    <h2 class="text-4xl font-sans font-bold">Nearby Vendors</h2>
+    <div class="mt-4 grid grid-cols-2 justify-center items-center">
+      <!-- Vendor Item -->
+      <div class=" bg-white shadow-md rounded-lg p-4 mb-4 w-fit flex items-center">
+        <img src="https://www.investopedia.com/thmb/8HWFwMcDj1k8a3GoK8ekvdXAywQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1368552631-e540388cb5a24b4f9c6a060640177073.jpg" alt="Vendor Image" class="w-[400px] h-[250px] object-cover mr-4 rounded-lg">
+        <div>
+          <h3 class="text-xl font-sans font-bold">Nourish to Flourish</h3>
+          <p class="text-gray-500"><i class="fa-solid fa-location-dot m-2"></i>Saket, Delhi</p>
+          <p class="text-yellow-500 text-2xl">★★★★☆</p>
+        </div>
+      </div>
+      <div class=" bg-white shadow-md rounded-lg p-4 mb-4 w-fit flex items-center">
+        <img src="https://www.investopedia.com/thmb/8HWFwMcDj1k8a3GoK8ekvdXAywQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1368552631-e540388cb5a24b4f9c6a060640177073.jpg" alt="Vendor Image" class="w-[400px] h-[250px] object-cover mr-4 rounded-lg">
+        <div>
+          <h3 class="text-xl font-sans font-bold">Rahul Sood</h3>
+          <p class="text-gray-500"><i class="fa-solid fa-location-dot m-2"></i>Gurugram, Haryana</p>
+          <p class="text-yellow-500 text-2xl">★★★★☆</p>
+        </div>
+      </div>
+      <div class=" bg-white shadow-md rounded-lg p-4 mb-4 w-fit flex items-center">
+        <img src="https://www.investopedia.com/thmb/8HWFwMcDj1k8a3GoK8ekvdXAywQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1368552631-e540388cb5a24b4f9c6a060640177073.jpg" alt="Vendor Image" class="w-[400px] h-[250px] object-cover mr-4 rounded-lg">
+        <div>
+          <h3 class="text-xl font-sans font-bold">Nourish to Flourish</h3>
+          <p class="text-gray-500"><i class="fa-solid fa-location-dot m-2"></i>Saket, Delhi</p>
+          <p class="text-yellow-500 text-2xl">★★★★☆</p>
+        </div>
+      </div>
+      <div class=" bg-white shadow-md rounded-lg p-4 mb-4 w-fit flex items-center">
+        <img src="https://www.investopedia.com/thmb/8HWFwMcDj1k8a3GoK8ekvdXAywQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1368552631-e540388cb5a24b4f9c6a060640177073.jpg" alt="Vendor Image" class="w-[400px] h-[250px] object-cover mr-4 rounded-lg">
+        <div>
+          <h3 class="text-xl font-sans font-bold">Rahul Sood</h3>
+          <p class="text-gray-500"><i class="fa-solid fa-location-dot m-2"></i>Gurugram, Haryana</p>
+          <p class="text-yellow-500 text-2xl">★★★★☆</p>
+        </div>
+      </div>
+      <!-- Add more vendor items as needed -->
+    </div>
+  </div> 
 </body>
 </html>
