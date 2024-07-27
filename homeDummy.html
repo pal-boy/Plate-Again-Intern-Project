@@ -4,18 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Food Donation Website</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./src/output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+    #heading {
+  overflow: hidden;
+  white-space: nowrap; 
+  border-right: 2px solid black;
+  animation: typing 4s steps(16, end) infinite;
+}
+
+@keyframes typing {
+  from { 
+    width: 0; 
+  }
+  to { 
+    width: 50%; 
+  }
+}
+  </style>
+
 </head>
 <body class="font-sans antialiased">
 
   <!-- Header -->
-  <nav class="p-4 bg-black">
-    <ul class="list-none flex justify-around items-center gap-5 text-white text-xl font-sans">
+  <nav id="home" class="p-4 bg-black">
+    <ul class="list-none flex justify-between items-center gap-5 text-white text-xl font-sans">
+      <a href="#">
+        <li>
+          <img class="rounded-xl w-32 h-14" src="./assests/logo.png" alt="">
+        </li>
+      </a>
       <a href="#" class="flex">
         <span><i class="fa-solid fa-house"></i></span>
         <li>Home</li>
       </a>
-      <a href="./vendorDetails.html" class="flex">
+      <a href="./vendorList.html" class="flex">
         <span><i class="fa-solid fa-truck"></i></span>
         <li>Vendor</li>
       </a>
@@ -23,20 +48,23 @@
         <span><i class="fa-solid fa-cart-shopping"></i></span>
         <li>Order</li>
       </a>
-      <a href="#" class="flex">
+      <a href="#about" class="flex">
         <span><i class="fa-solid fa-user"></i></span>
-        <li>Profile</li>
+        <li>About Us</li>
       </a>
-      <a href="#">
-        <li><i class="fa-solid fa-magnifying-glass mr-2"></i><input class="text-black p-1 rounded-lg font-sans text-xl" type="text" placeholder="Search"></li>
+      <a href="./login.html">
+        <button class="p-1 font-sans text-2xl rounded-xl border-2 bg-blue-400">Login</button>
       </a>
     </ul>
   </nav>
   <!-- Hero Section -->
-  <section class="bg-cover bg-center h-screen" style="background-image: url('./assests/PlateAgainHome.png');">
+  <section class="bg-cover bg-center h-screen opacity-[0.9]" style="background-image: url('./assests/PlateAgainHome.png');">
     <div class="container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-      <h1 class="text-5xl font-bold text-white">Fight Hunger Today</h1>
-      <p class="mt-4 text-xl text-white">Together We Can Make a Difference</p>
+      <h1 id="heading" class="text-6xl text-yellow-400 font-sans opacity-100 mb-4">Fight Hunger Today</h1>
+
+      <p class="text-blue-400 text-2xl font-sans">Plate again is an easy to use and navigate web application which connects willing vendors with restaurants owners and<br> people who wish to donate surplus food , so that those in need can look contentedly add their plate again.</p>
+
+      <p class="mt-4 text-2xl font-bold text-yellow-400 font-sans">Together We Can Make a Difference</p>
       <div class="mt-8 space-x-4">
         <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded">Donate Food</a>
         <a href="#" class="bg-gray-600 text-white px-6 py-3 rounded">Get Involved</a>
@@ -45,7 +73,7 @@
     </div>
   </section>
  <!-- How It Works -->
-<section class="my-11 mx-auto px-4 py-16">
+<section id="howItWorks" class="my-11 mx-auto px-4 py-16">
     <h2 class="text-3xl font-bold text-center">How It Works</h2>
     <div class="mt-8 flex justify-around">
       <div class="text-center">
@@ -66,10 +94,13 @@
     </div>
   </section>
   <!-- About Us -->
-  <section class="bg-gray-100 py-16">
+  <section id="about" class="bg-gray-100 py-16">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold">About Us</h2>
-      <p class="mt-4 text-gray-600">We are dedicated to fighting hunger and food insecurity in our community. Our mission is to provide nutritious food to those in need and create a supportive environment for everyone.We are a team of passionate individuals committed to addressing the issue of food waste in India. Our goal is to create a system that connects food donors with charities and NGOs, while also reducing the environmental impact of food waste.</p>
+
+      <p class="text-gray-600 text-2xl font-sans">Plate again is an easy to use and navigate web application which connects willing vendors with restaurants owners and<br> people who wish to donate surplus food , so that those in need can look contentedly add their plate again.</p>
+
+      <p class="mt-4 text-gray-600 text-2xl font-sans">We are dedicated to fighting hunger and food insecurity in our community. Our mission is to provide nutritious food to those in need and create a supportive environment for everyone.We are a team of passionate individuals committed to addressing the issue of food waste in India. Our goal is to create a system that connects food donors with charities and NGOs, while also reducing the environmental impact of food waste.</p>
       <div class="mt-8 flex justify-center space-x-8 gap-5">
         <div class="text-center">
           <h3 class="text-2xl font-bold">500+</h3>
@@ -88,7 +119,7 @@
   </section>
 
   <!-- Featured Programs -->
-  <section class="container mx-auto px-4 py-16">
+  <section id="programs" class="container mx-auto px-4 py-16">
     <h2 class="text-3xl font-bold text-center">Our Programs</h2>
     <div class="mt-8 flex flex-wrap justify-center">
       <!-- Program 1 -->
@@ -137,7 +168,7 @@
           <div class="px-6 py-4">
             <p class="text-gray-700 text-base">"Volunteering here has been a life-changing experience. It's wonderful to see the impact we have on the community."</p>
             <div class="mt-4 text-right">
-              <p class="text-gray-600 text-sm">- Akash pal</p>
+              <p class="text-gray-600 text-sm">- Aakash Pal</p>
             </div>
           </div>
         </div>
@@ -154,8 +185,8 @@
     </div>
   </section>
 
-  <!-- jinki gaand me guda hai unke liye -->
-  <section class="bg-blue-600 py-16 text-white text-center">
+  <!-- join our mission or volunteer -->
+  <section id="volunteer" class="bg-blue-600 py-16 text-white text-center">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold">Make a Difference Today</h2>
       <p class="mt-4 text-xl">Join us in our mission to end hunger in our community. Every bit helps!</p>
@@ -168,7 +199,7 @@
   </section>
 
   <!-- Latest News/Blog -->
-  <section class="container mx-auto px-4 py-16">
+  <section id="blog" class="container mx-auto px-4 py-16">
     <h2 class="text-3xl font-bold text-center">Latest News</h2>
     <div class="mt-8 flex flex-wrap justify-center">
       <!-- Blog Post 1 -->
@@ -198,30 +229,29 @@
     </div>
   </section>
   <!-- Footer -->
-  <footer class="bg-blue-600 text-white py-8">
+  <footer class="bg-blue-600 text-white h-[40vh] py-2">
     <div class="container mx-auto px-4 text-center">
       <div class="flex justify-around">
         <div>
           <h4 class="text-lg font-bold">Quick Links</h4>
           <ul class="mt-4 space-y-2">
-            <li><a href="#" class="hover:underline">Home</a></li>
-            <li><a href="#" class="hover:underline">About Us</a></li>
-            <li><a href="#" class="hover:underline">How It Works</a></li>
-            <li><a href="#" class="hover:underline">Donate Food</a></li>
-            <li><a href="#" class="hover:underline">Volunteer</a></li>
-            <li><a href="#" class="hover:underline">Contact Us</a></li>
-            <li><a href="#" class="hover:underline">Blog</a></li>
+            <li><a href="#home" class="hover:underline">Home</a></li>
+            <li><a href="#about" class="hover:underline">About Us</a></li>
+            <li><a href="#howItWorks" class="hover:underline">How It Works</a></li>
+            <li><a href="#programs" class="hover:underline">Our Programs</a></li>
+            <li><a href="#volunteer" class="hover:underline">Volunteer</a></li>
+            <li><a href="#blog" class="hover:underline">Blog</a></li>
           </ul>
         </div>
         <div>
           <h4 class="text-lg font-bold">Contact Us</h4>
           <p class="mt-4">69,Badnam Gali<br>Dholakpur, Delhi, 12345</p>
           <p class="mt-4">Email: info@plateagain.org</p>
-          <p>Phone: (+91) 9798 baki teri gaand me </p>
-          <div class="mt-4 space-x-4">
-            <a href="#" class="hover:underline">Facebook</a>
-            <a href="#" class="hover:underline">Twitter</a>
-            <a href="#" class="hover:underline">Instagram</a>
+          <p>Phone: (+91) 9798881510 </p>
+          <div class="mt-4 space-x-4 text-4xl">
+            <a href="#" class="hover:underline"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="hover:underline"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="hover:underline"><i class="fa-brands fa-instagram"></i></a>
           </div>
         </div>
         <div>
