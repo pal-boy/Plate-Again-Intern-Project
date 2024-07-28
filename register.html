@@ -9,45 +9,13 @@
 <body>
   <div class="register bg-gradient-to-b from-yellow-500 to-white h-screen flex items-center justify-center">
     <div class="w-full max-w-md">
-      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <form id="registerForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="restaurant-name">
-            Restaurant Name
+            Name
           </label>
-          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="restaurant-name" type="text" placeholder="Restaurant Name">
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="address1">
-            Address 1
-          </label>
-          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="address1" type="text" placeholder="Address 1">
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="address2">
-            Address 2
-          </label>
-          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="address2" type="text" placeholder="Address 2">
-        </div>
-        <div class="flex mb-4">
-          <div class="w-1/2 pr-2">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="city">
-              City
-            </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="city" type="text" placeholder="City">
-          </div>
-          <div class="w-1/2 pl-2">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="state">
-              State
-            </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="state" type="text" placeholder="State">
-          </div>
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="pincode">
-            Pincode
-          </label>
-          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="pincode" type="text" placeholder="Pincode">
-        </div>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="restaurant-name" type="text" placeholder="Your Name">
+       
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="mobile">
             Mobile No
@@ -60,9 +28,24 @@
           </label>
           <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Email Id">
         </div>
+
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+            Password
+          </label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+            Password
+          </label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="confirmPassword" type="password" placeholder="Comfirm Password">
+        </div>
+
+        <div id="errorMessage" class="error text-red-500"></div>
         <div class="flex items-center justify-between">
           <a href="./homeDummy.html">
-            <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+            <button id="registerBtn" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
               Register
             </button>
           </a>
@@ -72,5 +55,6 @@
     </div>
   </div>
   
+  <script src="./register.js"></script>
 </body>
 </html>
