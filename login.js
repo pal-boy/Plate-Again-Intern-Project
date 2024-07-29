@@ -1,6 +1,9 @@
 
 // Login page Logic starts
-
+import {emails,passwords} from "./register.js";
+console.log(test);
+console.log(emails);
+console.log(passwords);
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form from submitting
 
