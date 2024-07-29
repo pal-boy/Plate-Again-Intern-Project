@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Details Screen</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="booking-details bg-white h-screen">
+    <div class="px-4 py-2">
+      <h2 id="heading" class="text-xl font-bold mb-4">Booking Details</h2>
+      <div id="box" class="bg-white shadow-md rounded-lg p-4 mb-4">
+        <h3 id="booking-number" class="text-lg font-bold"></h3>
+        <p id="date" class="text-gray-500"></p>
+        <p id="ngoName" class="text-gray-500"></p>
+        <p id="status" class="text-gray-500"></p>
+        <p id="food-type" class="text-gray-500"></p>
+        <p id="cold-storage" class="text-gray-500"></p>
+        <p id="quantity" class="text-gray-500"></p>
+      </div>
+    </div>
+    <button id="close-modal" class="bg-green-600 text-white px-4 py-2 rounded">Close</button>
+    
+  </div>
+  </body>
+  <script>
+    // Sample booking data
+const bookingData = {
+  bookingNumber: "565502",
+  date: "24 August 2023",
+  ngoName: "Nourish to Flourish",
+  status: "Booked", // Possible values: "Booked", "Pending", "Canceled"
+  foodType: "Veg",
+  coldStorage: "Cold storage needed",
+  quantity: "21 Meals"
+};
+
+// Function to set booking details
+function setBookingDetails(data) {
+  document.getElementById('booking-number').textContent = `Booking no - ${data.bookingNumber}`;
+  document.getElementById('date').textContent = data.date;
+  document.getElementById('ngoName').textContent = data.ngoName;
+  
+  const statusElement = document.getElementById('status');
+  statusElement.textContent = data.status;
+  statusElement.className = `status ${data.status.toLowerCase()}`;
+  
+  document.getElementById('food-type').textContent = data.foodType;
+  document.getElementById('cold-storage').textContent = data.coldStorage;
+  document.getElementById('quantity').textContent = data.quantity;
+  
+}
+
+// Set booking details on page load
+document.addEventListener('DOMContentLoaded', () => {
+  setBookingDetails(bookingData);
+  //   close button
+  let closeButton = document.getElementById("close-modal");
+  console.log(closeButton);
+closeButton.addEventListener('click', () => {
+    window.open('homeDummy.html');
+  });
+});
+
+  </script>
+</html> 

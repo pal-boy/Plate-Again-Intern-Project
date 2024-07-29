@@ -4,35 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Booking Form Screen</title>
-  <link rel="stylesheet" href="./src/output.css">
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"> -->
+  <!-- <link rel="stylesheet" href="./src/output.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <style>
+    #success-modal {
+    display: none; /* Hidden by default */
+    }
+
+    #success-modal.show {
+    display: flex; /* Show the modal when the show class is added */
+    }
+</style>
 </head>
 <body>
-  <!-- some instructions before donating food -->
-   <!-- Food Do's and Dont's -->
-   <!-- <h1 class="text-5xl font-sans text-yellow-400 text-center mb-4">Instructions : Before Donate Food</h1>
-   <table class="border-4 w-[96%] ml-8 mb-4">
-      <tr class="border-4 font-sans text-2xl">
-        <th class="border-4 border-orange-600 p-4 w-[50%]">Food waste Do's</th>
-        <th class="border-4 border-orange-600">Food waste Dont's</th>
-      </tr>
-      <tr class="border-4 font-sans text-xl">
-        <td class="border-4 border-orange-600 p-4"><strong>Check Expiration Dates :</strong> Pay attention to expiration dates on perishable items and use the "first in/first out" method to ensure older items are used before newer ones.</td>
-        <td class="border-4 border-orange-600"><strong>OverBuy :</strong> Avoid buying in bulk unless you know you can use the itmes before they go bad. Large quantities often lead to food waste.</td>
-      </tr>
-      <tr class="border-4 font-sans text-xl">
-        <td class="border-4 border-orange-600 p-4"><strong>Properly Store Food :</strong> store food items according to their specific storage requirements.Keep perishables in the refridgerator,drygoods in airtight containers and use the freezer for items that won't be used soon.</td>
-        <td class="border-4 border-orange-600"><strong>Waste Takeout :</strong> Be mindful of takeout and restaurants leftovers. If you can't finish a meal,save it for later or share it with someone else.</td>
-      </tr>
-      <tr class="border-4 font-sans text-xl">
-        <td class="border-4 border-orange-600 p-4"><strong>Use Leftover Creativity :</strong> Get creative with leftover by turning them into new meals or freezing them for future use</td>
-        <td class="border-4 border-orange-600"><strong>Throwing Away Scraps :</strong> Avoid tossing food scraps like vegetable peels,fruit cores and bones in the trash. These can often be used for making broths or composted.</td>
-      </tr>
-      <tr class="border-4 font-sans text-xl">
-        <td class="border-4 border-orange-600 p-4"><strong>Support Food Banks :</strong> Donate non-perishable , unopened food items to local food banks or participate in food drives to help those in need.</td>
-        <td class="border-4 border-orange-600"><strong>Cook Too Much :</strong> When cooking avoid making ecessive portions that you can't consume or store properly. Start with smaller servings and adjust as needed.</td>
-      </tr>
-   </table> -->
    <!-- Akhil table -->
    <h1 class="text-5xl font-sans text-yellow-400 text-center my-6">Instructions : Before Donating Food</h1>
     <table class="border-4 w-11/12 mx-auto mb-8">
@@ -62,7 +46,7 @@
           </tbody>
     </table>
   <!-- booking form -->
-  <div id="booking-form" class="booking-form bg-white max-w-lg mx-auto p-6 rounded-lg shadow-lg">
+  <!-- <div id="booking-form" class="booking-form bg-white max-w-lg mx-auto p-6 rounded-lg shadow-lg">
     <h2 class="text-2xl font-bold mb-4 text-center">Book a Food Donation</h2>
     <div class="mb-4">
         <label class="block text-gray-700 mb-2" for="food-type">Type of food</label>
@@ -91,6 +75,46 @@
         <input type="datetime-local" id="date-time" class="w-full px-4 py-2 border rounded-lg">
     </div>
     <button id="submit-button" class="w-full py-2 bg-yellow-500 text-white rounded-lg">Book</button>
+</div> -->
+  <!-- booking form -->
+    <div id="booking-form" class="booking-form bg-white max-w-lg mx-auto p-6 rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold mb-4 text-center">Book a Food Donation</h2>
+    <div class="mb-4">
+        <label class="block text-gray-700 mb-2" for="food-type">Type of food</label>
+        <div class="flex">
+            <button id="veg"  class="flex-1 py-2 bg-gray-200 text-center rounded-l-lg">Veg</button>
+            <button id="non-veg" class="flex-1 py-2 bg-gray-200 text-center rounded-r-lg">Non Veg</button>
+        </div>
+    </div>
+    <div class="mb-4">
+        <label class="block text-gray-700 mb-2" for="food-name">Name of food</label>
+        <input type="text" id="food-name" class="w-full px-4 py-2 border rounded-lg" placeholder="Enter food name">
+    </div>
+    <div class="mb-4">
+        <label class="block text-gray-700 mb-2" for="food-quantity">Quantity of food</label>
+        <input type="number" id="food-quantity" class="w-full px-4 py-2 border rounded-lg" placeholder="Enter quantity">
+    </div>
+    <div class="mb-4">
+        <label class="block text-gray-700 mb-2" for="cold-storage">Cold Storage needed</label>
+        <div class="flex">
+            <button id="yes-button" class="flex-1 py-2 bg-gray-200 text-center rounded-l-lg">Yes</button>
+            <button id="no-button" class="flex-1 py-2 bg-gray-200 text-center rounded-r-lg">No</button>
+        </div>
+    </div>
+    <div class="mb-4">
+        <label class="block text-gray-700 mb-2" for="date-time">Pick-up Date & Time</label>
+        <input type="datetime-local" id="date-time" class="w-full px-4 py-2 border rounded-lg">
+    </div>
+    <button id="submit-button" class="w-full py-2 bg-yellow-500 text-white rounded-lg">Book</button>
+    </div>
+<!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0  items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white rounded-lg p-8 max-w-sm mx-auto text-center shadow-lg">
+    <h2 class="text-2xl font-bold mb-4 text-green-600">Thank You!</h2>
+    <p class="text-gray-600 mb-4">Your food donation booking is successful.</p>
+    <button id="close-modal" class="bg-green-600 text-white px-4 py-2 rounded">Close</button>
+    </div>
 </div>
+<script src="bookingform.js"></script>
 </body>
 </html>
