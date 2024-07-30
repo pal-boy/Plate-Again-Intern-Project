@@ -1,9 +1,7 @@
 // registration page code starts here
 
-export {emails,passwords,test};
 let emails;
 let passwords;
-let test = 5;
 document.querySelector('#registerForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form from submitting
     
@@ -37,13 +35,16 @@ document.querySelector('#registerForm').addEventListener('submit', function(even
      localStorage.setItem('emails', JSON.stringify(emails));
      localStorage.setItem('passwords', JSON.stringify(passwords));
 
-     console.log(emails);
-     console.log(passwords);
-        
+    //  console.log(emails);
+    //  console.log(passwords);
+    //  console.log(localStorage.length);
+    //  console.log(localStorage.emails.length);
+    //  console.log(localStorage);
     
 }); 
 
-
+// this will clear the localStorage mtlb deletes all emails and passwords from the storage
+// localStorage.clear();
 
 // Add password visibility toggle
 const passwordInput = document.getElementById('password');

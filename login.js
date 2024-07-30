@@ -1,9 +1,13 @@
 
 // Login page Logic starts
-import {emails,passwords} from "./register.js";
-console.log(test);
-console.log(emails);
-console.log(passwords);
+
+// these two lines of code fetches all emails and passwords from the local storage
+const emails = JSON.parse(localStorage.getItem('emails')) || [];
+const passwords = JSON.parse(localStorage.getItem('passwords')) || [];
+// console.log(emails);
+// console.log(passwords);
+// console.log(emails.length);
+
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form from submitting
 
@@ -19,19 +23,48 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     }
 
     // Simulate server-side validation
-    if (email === 'user@example.com' && password === 'password123') {
-        
-            window.open('./homeDummy.html');
+
+    let emailFlag = false;
+    let passwordFlag = false;
+    let emailPasswordFlag = false;
+
+    // this for loop iterates the emails and passwords in the localStorage and match the user's email password
+    for (let i = 0; i < emails.length; i++) {
+      if (email === emails[i] && password === passwords[i]) {
+        emailFlag = false;
+        passwordFlag = false;
+        emailPasswordFlag = false;
+        window.open('./homeDummy.html');
+        break;
         // Redirect to another page or perform other actions upon successful login
-    } else if(email !== 'user@example.com' && password === 'password123') {
-        errorMessage.textContent = 'Invalid email or password.';
+      }
+      else{
+        if(email !== emails[i] && password === passwords[i]) {
+          emailFlag = true;
+        }
+        if(email === emails[i] && password !== passwords[i]) {
+          passwordFlag = true;
+        }
+        if(email !== emails[i] && password !== passwords[i]){
+          emailPasswordFlag = true;
+        }
+      }
+      // console.log(emails[i]);
+      // console.log(passwords[i]);
     }
-     else if(email === 'user@example.com' && password !== 'password123') {
-        errorMessage.textContent = 'Invalid email or password.';
+    // console.log(emailFlag);
+    // console.log(passwordFlag);
+    // console.log(emailPasswordFlag);
+    if(emailPasswordFlag){
+      errorMessage.textContent = 'Account does not exist\nPlease register.';
     }
-    else{
-        errorMessage.textContent = 'Account does not exist.\n Please Register';
+    if(emailFlag){
+      errorMessage.textContent = 'Invalid email.';
     }
+    if(passwordFlag){
+      errorMessage.textContent = 'Invalid password.';
+    }
+     
 });
 
 // Add password visibility toggle
