@@ -6,24 +6,30 @@
   <title>Booking Details Screen</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <div class="booking-details bg-white h-screen">
-    <div class="px-4 py-2">
-      <h2 id="heading" class="text-xl font-bold mb-4">Booking Details</h2>
-      <div id="box" class="bg-white shadow-md rounded-lg p-4 mb-4">
-        <h3 id="booking-number" class="text-lg font-bold"></h3>
+<body >
+  <div class="booking-details min-h-screen flex items-center justify-between p-4">
+    <div class="bg-white shadow-lg rounded-lg p-6 mb-6 w-full max-w-md self-center">
+      <h2 id="heading" class="text-2xl font-bold text-gray-800 mb-4 text-center">Booking Details</h2>
+      <div class="space-y-2">
+        <h3 id="booking-number" class="text-lg font-semibold text-gray-700"></h3>
         <p id="date" class="text-gray-500"></p>
         <p id="ngoName" class="text-gray-500"></p>
         <p id="status" class="text-gray-500"></p>
         <p id="food-type" class="text-gray-500"></p>
         <p id="cold-storage" class="text-gray-500"></p>
+        <p id="location" class="text-gray-500"></p>
         <p id="quantity" class="text-gray-500"></p>
+        <p class="mt-4 text-5xl font-bold text-yellow-400 font-sans">Door Pickup</p>
+        <p class="text-blue-400 text-2xl font-sans">Your donate will be immediately collected and sent to needy people</p>
+        <button id="close-modal" class="bg-green-600 text-white px-8 py-5 rounded-lg shadow-lg hover:bg-green-700 transition duration-300">Close</button>  
       </div>
     </div>
-    <button id="close-modal" class="bg-green-600 text-white px-4 py-2 rounded">Close</button>
+    <div class="gif w-full mb-6"> 
+      <img class="h-[800px] object-contain rounded-lg" src="https://kishor-23.github.io/food-donate/img/delivery.gif" alt="Delivery Scooter">
+    </div>
+    
     
   </div>
-  </body>
   <script>
     // Function to retrieve booking data from local storage
   function getBookingData() {
@@ -34,16 +40,22 @@
       return null;
     }
   }
+  // Retrieve vendor details from local storage
+  const vendorName = localStorage.getItem('vendorName');
+    const vendorLocation = localStorage.getItem('vendorLocation');
+    console.log(vendorLocation);
+    console.log(vendorName);
+    
   // Function to set booking details
   function setBookingDetails(data) {
     if (!data) {
       console.error('No booking data found.');
       return;
     }
-    console.log(data);
     document.getElementById('booking-number').textContent = `Booking no - ${data.bookingNumber || '56345'}`;
     document.getElementById('date').textContent = data.dateTime;
-    document.getElementById('ngoName').textContent = data.ngoName || 'Resturant name not stored in local storage';
+    document.getElementById('ngoName').textContent = vendorName || 'Resturant name not stored in local storage';
+    document.getElementById('location').textContent = vendorLocation || 'Resturaant location';
     
     const statusElement = document.getElementById('status');
     statusElement.textContent = data.status || 'Confired';
@@ -66,4 +78,5 @@
     });
   });
   </script>
+</body>
 </html> 
