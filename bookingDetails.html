@@ -25,43 +25,45 @@
   </div>
   </body>
   <script>
-    // Sample booking data
-const bookingData = {
-  bookingNumber: "565502",
-  date: "24 August 2023",
-  ngoName: "Nourish to Flourish",
-  status: "Booked", // Possible values: "Booked", "Pending", "Canceled"
-  foodType: "Veg",
-  coldStorage: "Cold storage needed",
-  quantity: "21 Meals"
-};
-
-// Function to set booking details
-function setBookingDetails(data) {
-  document.getElementById('booking-number').textContent = `Booking no - ${data.bookingNumber}`;
-  document.getElementById('date').textContent = data.date;
-  document.getElementById('ngoName').textContent = data.ngoName;
+    // Function to retrieve booking data from local storage
+  function getBookingData() {
+    const storedData = localStorage.getItem('formData');
+    if (storedData) {
+      return JSON.parse(storedData);
+    } else {
+      return null;
+    }
+  }
+  // Function to set booking details
+  function setBookingDetails(data) {
+    if (!data) {
+      console.error('No booking data found.');
+      return;
+    }
+    console.log(data);
+    document.getElementById('booking-number').textContent = `Booking no - ${data.bookingNumber || '56345'}`;
+    document.getElementById('date').textContent = data.dateTime;
+    document.getElementById('ngoName').textContent = data.ngoName || 'Resturant name not stored in local storage';
+    
+    const statusElement = document.getElementById('status');
+    statusElement.textContent = data.status || 'Confired';
+    statusElement.className = `status ${data.status?.toLowerCase() || 'unknown'}`;
+    
+    document.getElementById('food-type').textContent = data.foodType || 'N/A';
+    document.getElementById('cold-storage').textContent = `Cold Storage :${data.coldStorage || 'N/A'}`;
+    document.getElementById('quantity').textContent = `${data.foodQuantity || 'N/A' } Meals`;
+  }
   
-  const statusElement = document.getElementById('status');
-  statusElement.textContent = data.status;
-  statusElement.className = `status ${data.status.toLowerCase()}`;
-  
-  document.getElementById('food-type').textContent = data.foodType;
-  document.getElementById('cold-storage').textContent = data.coldStorage;
-  document.getElementById('quantity').textContent = data.quantity;
-  
-}
-
-// Set booking details on page load
-document.addEventListener('DOMContentLoaded', () => {
-  setBookingDetails(bookingData);
-  //   close button
-  let closeButton = document.getElementById("close-modal");
-  console.log(closeButton);
-closeButton.addEventListener('click', () => {
-    window.open('homeDummy.html');
+  // Set booking details on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    const bookingData = getBookingData();
+    setBookingDetails(bookingData);
+    //   close button
+    let closeButton = document.getElementById("close-modal");
+    console.log(closeButton);
+    closeButton.addEventListener('click', () => {
+      window.open('homeDummy.html');
+    });
   });
-});
-
   </script>
 </html> 
