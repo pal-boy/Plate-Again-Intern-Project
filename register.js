@@ -20,7 +20,8 @@ document.querySelector('#registerForm').addEventListener('submit', function(even
         errorMessage.textContent = 'Password and confirm password does not match.';
     }
     else{
-        window.open('./homeDummy.html');
+        showSuccessModal();
+        console.log("working");
     }
   
      // Get existing values from localStorage
@@ -63,3 +64,25 @@ passwordToggle.addEventListener('click', () => {
     passwordToggle.innerHTML = '👀';
   }
 });
+// register Sussecc
+// Helper function to display the success modal
+function showSuccessModal() {
+  const modal = document.getElementById('success-modal');
+  const closeModalButton = document.getElementById('close-modal');
+
+  // Show the modal
+  modal.classList.add('show');
+
+  // Hide the modal when the close button is clicked
+  closeModalButton.addEventListener('click', () => {
+    modal.classList.remove('show');
+    window.open('login.html');
+  });
+
+  // Hide the modal when clicking outside of the modal content
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.classList.remove('show');
+    }
+  });
+}
