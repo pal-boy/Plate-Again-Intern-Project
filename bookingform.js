@@ -97,8 +97,6 @@ function storeFormData() {
         coldStorage: Array.from(coldStorageButtons).find(button => button.classList.contains('bg-yellow-500')).innerText,
         dateTime: dateTimeInput.value
     };
-    // check kar rha hu data aa rha ki nahi
-    console.log(formData);
     localStorage.setItem('formData', JSON.stringify(formData));
 }
 

@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register Screen</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    #success-modal {
+    display: none; /* Hidden by default */
+    }
+
+    #success-modal.show {
+    display: flex; /* Show the modal when the show class is added */
+    }
+  </style>
 </head>
 <body>
   <div class="register bg-gradient-to-b from-yellow-500 to-white h-screen flex items-center justify-center">
@@ -44,7 +53,7 @@
 
         <div id="errorMessage" class="error text-red-500"></div>
         <div class="flex items-center justify-between">
-          <a href="./homeDummy.html">
+          <a href="#">
             <button id="registerBtn" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
               Register
             </button>
@@ -54,6 +63,14 @@
       </form>
     </div>
   </div>
+  <!-- Success Modal -->
+  <div id="success-modal" class="fixed inset-0  items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white rounded-lg p-8 max-w-sm mx-auto text-center shadow-lg">
+    <h2 class="text-2xl font-bold mb-4 text-green-600">Thank You!</h2>
+    <p class="text-gray-600 mb-4">Your Registration is successful.</p>
+    <button id="close-modal" class="text-white px-4 py-2 rounded">Login</button>
+    </div>
+</div>
   
   <script src="./register.js" type="module"></script>
 </body>
