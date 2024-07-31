@@ -13,7 +13,7 @@
       overflow-x: hidden;
       height: 5rem;
       white-space: nowrap; 
-      border-right: 2px solid rgb(118, 108, 108);
+      border-right: 1px solid;
       animation: typing 4s steps(16, end) infinite;
     }
 
@@ -22,7 +22,7 @@
         width: 0; 
       }
       to { 
-        width: 45%; 
+        width: 40%; 
       }
     }
   </style>
@@ -31,7 +31,7 @@
 <body class="font-sans antialiased">
 
   <!-- Header -->
-  <nav id="home" class="p-4 bg-black">
+  <nav id="home" class="p-4 bg-black sticky top-0">
     <ul class="list-none flex justify-between items-center gap-5 text-white text-xl font-sans">
       <a href="#">
         <li>
@@ -57,7 +57,7 @@
       <a href="./login.html">
         <div class="flex flex-col items-center">
           <i class="fa-solid fa-circle-user text-4xl"></i>
-          <p>Aakash Pal</p>
+          <p id="user-name"></p>
         </div>
         <!-- <button class="p-1 font-sans text-2xl rounded-xl border-2 bg-blue-400">Login</button> -->
       </a>
@@ -69,9 +69,9 @@
     <div class="container mx-auto px-4 h-screen flex flex-col justify-center items-center text-center">
       <h1 id="heading" class="text-6xl text-sky-400 font-sans opacity-100 mb-4">Fight Hunger Today</h1>
 
-      <p class="text-blue-400 text-2xl font-sans">Plate again is an easy to use and navigate web application which connects willing vendors with restaurants owners and<br> people who wish to donate surplus food , so that those in need can look contentedly add their plate again.</p>
+      <p class="text-black text-2xl font-sans">Plate again is an easy to use and navigate web application which connects willing vendors with restaurants owners and<br> people who wish to donate surplus food , so that those in need can look contentedly add their plate again.</p>
 
-      <p class="mt-4 text-2xl font-bold text-yellow-400 font-sans">Together We Can Make a Difference</p>
+      <p class="mt-4 text-2xl font-bold text-yellow-300 font-sans">Together We Can Make a Difference</p>
       <div class="mt-8 space-x-4">
         <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded">Donate Food</a>
         <a href="#" class="bg-gray-600 text-white px-6 py-3 rounded">Get Involved</a>
@@ -278,6 +278,16 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const names = JSON.parse(localStorage.getItem('names')) || [];
+    
+    let userName = document.getElementById('user-name');
+    console.log(names);
+    console.log(names[names.length - 1]);
+    console.log(userName);
+    userName.textContent = names[names.length - 1];
+  </script>
 
 </body>
 </html>

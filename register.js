@@ -1,15 +1,15 @@
 // registration page code starts here
-
+let names;
 let emails;
 let passwords;
 document.querySelector('#registerForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form from submitting
     
     let email = document.getElementById('email').value;
+    let name = document.getElementById('name').value;
     let password = document.getElementById('password').value;
     let confirmPassword = document.getElementById('confirmPassword').value;
     let errorMessage = document.getElementById('errorMessage');
-    // let registerbutton = document.getElementById('registerBtn');
 
     // Basic validation
     if (!email || !password || !confirmPassword) {
@@ -25,27 +25,24 @@ document.querySelector('#registerForm').addEventListener('submit', function(even
     }
   
      // Get existing values from localStorage
+     names = JSON.parse(localStorage.getItem('names')) || [];
      emails = JSON.parse(localStorage.getItem('emails')) || [];
      passwords = JSON.parse(localStorage.getItem('passwords')) || [];
 
      // Add the new value to the array
+     names.push(name);
      emails.push(email);
      passwords.push(password);
 
      // Store the updated array back to localStorage
+     localStorage.setItem('names', JSON.stringify(names));
      localStorage.setItem('emails', JSON.stringify(emails));
      localStorage.setItem('passwords', JSON.stringify(passwords));
-
-    //  console.log(emails);
-    //  console.log(passwords);
-    //  console.log(localStorage.length);
-    //  console.log(localStorage.emails.length);
-    //  console.log(localStorage);
     
 }); 
 
 // this will clear the localStorage mtlb deletes all emails and passwords from the storage
-// localStorage.clear();
+localStorage.clear();
 
 // Add password visibility toggle
 const passwordInput = document.getElementById('password');
@@ -64,7 +61,8 @@ passwordToggle.addEventListener('click', () => {
     passwordToggle.innerHTML = '👀';
   }
 });
-// register Sussecc
+
+// register Success
 // Helper function to display the success modal
 function showSuccessModal() {
   const modal = document.getElementById('success-modal');

@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register Screen</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./src/output.css">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
   <style>
     #success-modal {
     display: none; /* Hidden by default */
@@ -23,7 +24,7 @@
           <label class="block text-gray-700 text-sm font-bold mb-2" for="restaurant-name">
             Name
           </label>
-          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="restaurant-name" type="text" placeholder="Your Name">
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Your Name" required>
        
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="mobile">
@@ -68,7 +69,7 @@
     <div class="bg-white rounded-lg p-8 max-w-sm mx-auto text-center shadow-lg">
     <h2 class="text-2xl font-bold mb-4 text-green-600">Thank You!</h2>
     <p class="text-gray-600 mb-4">Your Registration is successful.</p>
-    <button id="close-modal" class="text-white px-4 py-2 rounded">Login</button>
+    <button id="close-modal" class="text-black px-4 py-2 rounded">Login</button>
     </div>
 </div>
   
