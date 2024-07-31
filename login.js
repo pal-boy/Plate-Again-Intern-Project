@@ -83,3 +83,4 @@ passwordToggle.addEventListener('click', () => {
 });
 
 // Login page Logic ends
+// responsive logic 

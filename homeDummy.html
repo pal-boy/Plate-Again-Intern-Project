@@ -31,14 +31,13 @@
 </head>
 <body class="font-sans antialiased">
 
-  <!-- Header -->
-  <nav id="home" class="p-2 bg-black sticky top-0">
-    <ul class="list-none flex justify-between items-center gap-5 text-white text-xl font-sans">
-      <a href="#">
-        <li>
-          <img class="rounded-xl w-32 h-12" src="./assests/logo.png" alt="">
-        </li>
-      </a>
+<!-- Header -->
+<nav id="home" class="p-2 bg-[#212121] sticky top-0 z-50">
+  <div class="container mx-auto flex justify-between lg:justify-start items-center gap-14">
+    <a href="#">
+      <img class="rounded-xl w-32 h-12" src="./assests/logo.png" alt="Logo">
+    </a>
+    <ul class="hidden md:flex list-none lg:flex justify-evenly items-center gap-52 text-white text-xl font-sans">
       <a href="#" class="flex hover:text-yellow-300">
         <span><i class="fa-solid fa-house"></i></span>
         <li>Home</li>
@@ -60,48 +59,69 @@
           <i class="fa-solid fa-circle-user text-3xl"></i>
           <p id="user-name" class="text-lg font-sans"></p>
         </div>
-        <!-- <button class="p-1 font-sans text-2xl rounded-xl border-2 bg-blue-400">Login</button> -->
       </a>
     </ul>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="bg-cover bg-center h-screen" style="background-image: url('https://i0.wp.com/leaglesamiksha.com/wp-content/uploads/2022/05/1503608938-598.jpg?fit=620%2C464&ssl=1');">
-    <div class="container mx-auto px-4 h-screen flex flex-col justify-center items-center text-center">
-      <h1 id="heading" class="text-6xl text-yellow-300 font-bold font-sans opacity-100 mb-4">Fight Hunger Today</h1>
-
-      <p class="text-white text-2xl font-sans">Plate again is an easy to use and navigate web application which connects willing donating points(people who are in need) with food donators and people who wish to donate surplus food , so that those in need can look contentedly add their plate again.</p>
-
-      <p class="mt-4 text-2xl font-bold text-yellow-300 font-sans">Together We Can Make a Difference</p>
-      <div class="mt-8 space-x-4">
-        <a href="./vendorList.html" class="bg-blue-600 text-white px-6 py-3 rounded">Donate Food</a>
-        <!-- <a href="#" class="bg-gray-600 text-white px-6 py-3 rounded">Get Involved</a>
-        <a href="#" class="bg-white text-blue-600 px-6 py-3 rounded">Learn More</a> -->
-      </div>
+    <div class="md:hidden">
+      <button id="menu-button" class="text-white focus:outline-none">
+        <i class="fa-solid fa-bars text-3xl"></i>
+      </button>
     </div>
-  </section>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden flex flex-col bg-black text-white text-xl font-sans">
+    <a href="#" class="p-2 hover:text-yellow-300">
+      <span><i class="fa-solid fa-house"></i> Home</span>
+    </a>
+    <a href="./vendorList.html" class="p-2 hover:text-yellow-300">
+      <span><i class="fa-solid fa-truck"></i> Donating Points</span>
+    </a>
+    <a href="bookingDetails.html" class="p-2 hover:text-yellow-300">
+      <span><i class="fa-solid fa-cart-shopping"></i> Order</span>
+    </a>
+    <a href="#about" class="p-2 hover:text-yellow-300">
+      <span><i class="fa-solid fa-user"></i> About Us</span>
+    </a>
+    <a href="#" class="p-2 hover:text-yellow-300">
+      <div class="flex flex-col items-center">
+        <i class="fa-solid fa-circle-user text-3xl"></i>
+        <p id="user-name" class="text-lg font-sans"></p>
+      </div>
+    </a>
+  </div>
+</nav>
 
- <!-- How It Works -->
+<!-- Hero Section -->
+<section class="bg-cover bg-center h-screen" style="background-image: url('https://i0.wp.com/leaglesamiksha.com/wp-content/uploads/2022/05/1503608938-598.jpg?fit=620%2C464&ssl=1');">
+  <div class="container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
+    <h1 id="heading" class="text-4xl md:text-6xl text-yellow-300 font-bold font-sans mb-4">Fight Hunger Today</h1>
+    <p class="text-white text-lg md:text-2xl font-sans">Plate again is an easy to use and navigate web application which connects willing donating points(people who are in need) with food donators and people who wish to donate surplus food, so that those in need can look contentedly add their plate again.</p>
+    <p class="mt-4 text-lg md:text-2xl font-bold text-yellow-300 font-sans">Together We Can Make a Difference</p>
+    <div class="mt-8 space-x-4">
+      <a href="./vendorList.html" class="bg-blue-600 text-white px-6 py-3 rounded">Donate Food</a>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
 <section id="howItWorks" class="my-11 mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold text-center">How It Works</h2>
-    <div class="mt-8 flex justify-around">
-      <div class="text-center">
-        <img src="https://cdn-icons-png.flaticon.com/128/9428/9428917.png" alt="Register" class="mx-auto mb-4">
-        <h3 class="text-2xl font-semibold">Register</h3>
-        <p class="mt-2 text-gray-600">Sign up or log in</p>
-      </div>
-      <div class="text-center">
-        <img src="https://cdn-icons-png.flaticon.com/128/11008/11008379.png" alt="Donate" class="mx-auto mb-4">
-        <h3 class="text-2xl font-semibold">Donate</h3>
-        <p class="mt-2 text-gray-600">Select food items to donate</p>
-      </div>
-      <div class="text-center">
-        <img src="https://cdn-icons-png.flaticon.com/128/5126/5126437.png" alt="Distribute" class="mx-auto mb-4">
-        <h3 class="text-2xl font-semibold">Distribute </h3>
-        <p class="mt-2 text-gray-600">Track how donations are distributed</p>
-      </div>
+  <h2 class="text-3xl font-bold text-center">How It Works</h2>
+  <div class="mt-8 flex flex-col md:flex-row justify-around items-center gap-8">
+    <div class="text-center w-full md:w-auto">
+      <img src="https://cdn-icons-png.flaticon.com/128/9428/9428917.png" alt="Register" class="mx-auto mb-4 w-24 h-24">
+      <h3 class="text-2xl font-semibold">Register</h3>
+      <p class="mt-2 text-gray-600">Sign up or log in</p>
     </div>
-  </section>
+    <div class="text-center w-full md:w-auto">
+      <img src="https://cdn-icons-png.flaticon.com/128/11008/11008379.png" alt="Donate" class="mx-auto mb-4 w-24 h-24">
+      <h3 class="text-2xl font-semibold">Donate</h3>
+      <p class="mt-2 text-gray-600">Select food items to donate</p>
+    </div>
+    <div class="text-center w-full md:w-auto">
+      <img src="https://cdn-icons-png.flaticon.com/128/5126/5126437.png" alt="Distribute" class="mx-auto mb-4 w-24 h-24">
+      <h3 class="text-2xl font-semibold">Distribute</h3>
+      <p class="mt-2 text-gray-600">Track how donations are distributed</p>
+    </div>
+  </div>
+</section>
 
   <!-- About Us -->
   <section id="about" class="bg-gray-100 py-16">
@@ -238,48 +258,72 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-blue-600 text-white h-[40vh] py-2">
-    <div class="container mx-auto px-4 text-center">
-      <div class="flex justify-around">
+<footer class="bg-[#212121] text-white py-8">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-around items-center md:items-start">
+      <div class="mb-8 md:mb-0 text-center md:text-left">
+        <img src="./assests/logo.png" alt="Logo" class="rounded-xl w-32 h-12 mb-4 mx-auto md:mx-0">
+        <p class="text-gray-400">Connecting food donors with those in need.</p>
+      </div>
+      <div class="flex flex-col md:flex-row lg:gap-40 text-center md:text-left">
         <div>
-          <h4 class="text-lg font-bold">Quick Links</h4>
-          <ul class="mt-4 space-y-2">
-            <li><a href="#home" class="hover:underline">Home</a></li>
-            <li><a href="#about" class="hover:underline">About Us</a></li>
-            <li><a href="#howItWorks" class="hover:underline">How It Works</a></li>
-            <li><a href="#programs" class="hover:underline">Our Programs</a></li>
-            <li><a href="#volunteer" class="hover:underline">Volunteer</a></li>
-            <li><a href="#blog" class="hover:underline">Blog</a></li>
+          <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
+          <ul class="list-none">
+            <li class="mb-1">
+              <a href="#" class="hover:text-yellow-300">Home</a>
+            </li>
+            <li class="mb-1">
+              <a href="./vendorList.html" class="hover:text-yellow-300">Donating Points</a>
+            </li>
+            <li class="mb-1">
+              <a href="bookingDetails.html" class="hover:text-yellow-300">Order</a>
+            </li>
+            <li>
+              <a href="#about" class="hover:text-yellow-300">About Us</a>
+            </li>
           </ul>
         </div>
-        <div>
-          <h4 class="text-lg font-bold">Contact Us</h4>
-          <p class="mt-4">Plot no. 69,Plate Again building<br>Dholakpur, Delhi, 122005</p>
-          <p class="mt-4">Email: info@plateagain.org</p>
-          <p>Phone: (+91) 9798881510 </p>
-          <div class="mt-4 space-x-4 text-4xl">
-            <a href="#" class="hover:underline"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" class="hover:underline"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#" class="hover:underline"><i class="fa-brands fa-instagram"></i></a>
-          </div>
+        <div class="pt-4">
+          <h3 class="text-lg font-semibold mb-2">Follow Us</h3>
+          <ul class="list-none flex justify-center md:justify-start gap-4">
+            <li>
+              <a href="https://www.instagram.com/akhil_raj_5965?igsh=bWo3NXhteG5mcDVi" class="hover:text-yellow-300">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/akhil_raj_5965?igsh=bWo3NXhteG5mcDVi" class="hover:text-yellow-300">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/akhil_raj_5965?igsh=bWo3NXhteG5mcDVi" class="hover:text-yellow-300">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/akhil-raj-6b38b62a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hover:text-yellow-300">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
         </div>
-        <div>
-          <h4 class="text-lg font-bold">Newsletter</h4>
-          <p class="mt-4">Sign up to receive updates and news.</p>
-          <form class="mt-4">
-            <input type="email" class="px-4 py-2 rounded" placeholder="Your email address">
-            <button type="submit" class="bg-white text-blue-600 px-4 py-2 rounded ml-2">Subscribe</button>
-          </form>
-        </div>
-      </div>
-      <div class="mt-5">
-        <p>Designed and Developed By Akhil and Aakash Pal</p>
-        <p>&copy; 2024 Plate Again. All rights reserved.</p>
       </div>
     </div>
-  </footer>
+    <div class="mt-8 text-center border-t border-gray-700 pt-4">
+      <p class="text-gray-400">Designed And Developed by Akhil Raj And Aakash Pal</p>
+      <p class="text-gray-400">&copy; 2024 Plate Again. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
 
   <script>
+     const menuButton = document.getElementById('menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  menuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
     const names = JSON.parse(localStorage.getItem('names')) || [];
     
     let userName = document.getElementById('user-name');
