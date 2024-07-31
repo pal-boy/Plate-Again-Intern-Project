@@ -48,6 +48,9 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
       }
       
     }
+    if(emails.length == 0){
+      errorMessage.textContent = 'Account does not exist\nPlease register.';
+    }
     
     if(emailPasswordFlag){
       errorMessage.textContent = 'Account does not exist\nPlease register.';
