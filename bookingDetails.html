@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Booking Details Screen</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./src/output.css">
 </head>
 <body >
   <div class="booking-details min-h-screen flex items-center justify-between p-4">
@@ -53,11 +53,11 @@
     }
     document.getElementById('booking-number').textContent = `Booking no - ${data.bookingNumber || '56345'}`;
     document.getElementById('date').textContent = data.dateTime;
-    document.getElementById('ngoName').textContent = localStorage.getItem('donatePoint');
-    document.getElementById('location').textContent = localStorage.getItem('location');
+    document.getElementById('ngoName').textContent = `Donating Point : ${localStorage.getItem('donatePoint')}`;
+    document.getElementById('location').textContent = `Location : ${localStorage.getItem('location')}`;
     
     const statusElement = document.getElementById('status');
-    statusElement.textContent = data.status || 'Confired';
+    statusElement.textContent = data.status || 'Confirmed';
     statusElement.className = `status ${data.status?.toLowerCase() || 'unknown'}`;
     
     document.getElementById('food-type').textContent = data.foodType || 'N/A';
