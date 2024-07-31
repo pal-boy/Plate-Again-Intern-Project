@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Food Donation Website</title>
+  <title>Plate Again-A Food Donation Website</title>
+  <link rel="shortcut icon" href="https://www.shutterstock.com/image-vector/paratha-bread-traditional-indian-food-600nw-2037629645.jpg" type="image/x-icon">
   <link rel="stylesheet" href="./src/output.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <!-- npx tailwindcss -i ./src/input.css -o ./src/output.css --watch -->
@@ -31,33 +32,33 @@
 <body class="font-sans antialiased">
 
   <!-- Header -->
-  <nav id="home" class="p-4 bg-black sticky top-0">
+  <nav id="home" class="p-2 bg-black sticky top-0">
     <ul class="list-none flex justify-between items-center gap-5 text-white text-xl font-sans">
       <a href="#">
         <li>
-          <img class="rounded-xl w-32 h-14" src="./assests/logo.png" alt="">
+          <img class="rounded-xl w-32 h-12" src="./assests/logo.png" alt="">
         </li>
       </a>
-      <a href="#" class="flex">
+      <a href="#" class="flex hover:text-yellow-300">
         <span><i class="fa-solid fa-house"></i></span>
         <li>Home</li>
       </a>
-      <a href="./vendorList.html" class="flex">
+      <a href="./vendorList.html" class="flex hover:text-yellow-300">
         <span><i class="fa-solid fa-truck"></i></span>
         <li>Donating Points</li>
       </a>
-      <a href="bookingDetails.html" class="flex">
+      <a href="bookingDetails.html" class="flex hover:text-yellow-300">
         <span><i class="fa-solid fa-cart-shopping"></i></span>
         <li>Order</li>
       </a>
-      <a href="#about" class="flex">
+      <a href="#about" class="flex hover:text-yellow-300">
         <span><i class="fa-solid fa-user"></i></span>
         <li>About Us</li>
       </a>
       <a href="./login.html">
         <div class="flex flex-col items-center">
-          <i class="fa-solid fa-circle-user text-4xl"></i>
-          <p id="user-name"></p>
+          <i class="fa-solid fa-circle-user text-3xl"></i>
+          <p id="user-name" class="text-lg font-sans"></p>
         </div>
         <!-- <button class="p-1 font-sans text-2xl rounded-xl border-2 bg-blue-400">Login</button> -->
       </a>
@@ -69,7 +70,7 @@
     <div class="container mx-auto px-4 h-screen flex flex-col justify-center items-center text-center">
       <h1 id="heading" class="text-6xl text-sky-400 font-sans opacity-100 mb-4">Fight Hunger Today</h1>
 
-      <p class="text-black text-2xl font-sans">Plate again is an easy to use and navigate web application which connects willing vendors with restaurants owners and<br> people who wish to donate surplus food , so that those in need can look contentedly add their plate again.</p>
+      <p class="text-white text-2xl font-sans">Plate again is an easy to use and navigate web application which connects willing vendors with restaurants owners and<br> people who wish to donate surplus food , so that those in need can look contentedly add their plate again.</p>
 
       <p class="mt-4 text-2xl font-bold text-yellow-300 font-sans">Together We Can Make a Difference</p>
       <div class="mt-8 space-x-4">
@@ -255,7 +256,7 @@
         </div>
         <div>
           <h4 class="text-lg font-bold">Contact Us</h4>
-          <p class="mt-4">69,Badnam Gali<br>Dholakpur, Delhi, 12345</p>
+          <p class="mt-4">Plot no. 69,Plate Again building<br>Dholakpur, Delhi, 122005</p>
           <p class="mt-4">Email: info@plateagain.org</p>
           <p>Phone: (+91) 9798881510 </p>
           <div class="mt-4 space-x-4 text-4xl">
@@ -283,9 +284,6 @@
     const names = JSON.parse(localStorage.getItem('names')) || [];
     
     let userName = document.getElementById('user-name');
-    console.log(names);
-    console.log(names[names.length - 1]);
-    console.log(userName);
     userName.textContent = names[names.length - 1];
   </script>
 

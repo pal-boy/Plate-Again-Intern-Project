@@ -27,6 +27,10 @@
     <div class="gif w-full mb-6"> 
       <img class="h-[800px] object-contain rounded-lg" src="https://kishor-23.github.io/food-donate/img/delivery.gif" alt="Delivery Scooter">
     </div>
+
+    <div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31662.059818948488!2d77.18090518756487!3d28.52008403015047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce1f0dd053fdd%3A0x97d95c1a5860139f!2sSaket%2C%20New%20Delhi%2C%20Delhi%20110017!5e0!3m2!1sen!2sin!4v1722410061266!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
     
     
   </div>
@@ -40,11 +44,6 @@
       return null;
     }
   }
-  // Retrieve vendor details from local storage
-  const vendorName = localStorage.getItem('vendorName');
-    const vendorLocation = localStorage.getItem('vendorLocation');
-    console.log(vendorLocation);
-    console.log(vendorName);
     
   // Function to set booking details
   function setBookingDetails(data) {
@@ -54,8 +53,8 @@
     }
     document.getElementById('booking-number').textContent = `Booking no - ${data.bookingNumber || '56345'}`;
     document.getElementById('date').textContent = data.dateTime;
-    document.getElementById('ngoName').textContent = vendorName || 'Resturant name not stored in local storage';
-    document.getElementById('location').textContent = vendorLocation || 'Resturaant location';
+    document.getElementById('ngoName').textContent = localStorage.getItem('donatePoint');
+    document.getElementById('location').textContent = localStorage.getItem('location');
     
     const statusElement = document.getElementById('status');
     statusElement.textContent = data.status || 'Confired';

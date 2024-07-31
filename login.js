@@ -4,9 +4,6 @@
 // these two lines of code fetches all emails and passwords from the local storage
 const emails = JSON.parse(localStorage.getItem('emails')) || [];
 const passwords = JSON.parse(localStorage.getItem('passwords')) || [];
-// console.log(emails);
-// console.log(passwords);
-// console.log(emails.length);
 
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form from submitting
@@ -49,12 +46,9 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
           emailPasswordFlag = true;
         }
       }
-      // console.log(emails[i]);
-      // console.log(passwords[i]);
+      
     }
-    // console.log(emailFlag);
-    // console.log(passwordFlag);
-    // console.log(emailPasswordFlag);
+    
     if(emailPasswordFlag){
       errorMessage.textContent = 'Account does not exist\nPlease register.';
     }
