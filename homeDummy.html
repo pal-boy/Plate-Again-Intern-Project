@@ -15,7 +15,7 @@
       height: 5rem;
       white-space: nowrap; 
       border-right: 1px solid;
-      animation: typing 4s steps(16, end) infinite;
+      animation: typing 5s steps(16, end) infinite;
     }
 
     @keyframes typing {
@@ -25,6 +25,20 @@
       to { 
         width: 40%; 
       }
+    }
+    @media screen and (max-width:400px) {
+      #heading{
+        animation: typing 6s steps(16, end) infinite;
+        height: 3rem;
+      }
+      @keyframes typing {
+      from { 
+        width: 0; 
+      }
+      to { 
+        width: 110%; 
+      }
+    }
     }
   </style>
 
@@ -323,6 +337,7 @@
   
   menuButton.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
+    // mobileMenu.style.display = 'flex';
   });
     const names = JSON.parse(localStorage.getItem('names')) || [];
     
