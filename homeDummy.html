@@ -83,7 +83,7 @@
     <a href="#" class="p-2 hover:text-yellow-300">
       <div class="flex flex-col items-center">
         <i class="fa-solid fa-circle-user text-3xl"></i>
-        <p id="user-name" class="text-lg font-sans"></p>
+        <p id="user-name-for-mobile" class="text-lg font-sans"></p>
       </div>
     </a>
   </div>
@@ -327,6 +327,8 @@
     const names = JSON.parse(localStorage.getItem('names')) || [];
     
     let userName = document.getElementById('user-name');
+    let userNameForMobile = document.getElementById('user-name-for-mobile');
+    userNameForMobile.textContent = names[names.length - 1];
     userName.textContent = names[names.length - 1];
   </script>
 
