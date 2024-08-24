@@ -10,6 +10,7 @@ document.querySelector('#registerForm').addEventListener('submit', function(even
     let password = document.getElementById('password').value;
     let confirmPassword = document.getElementById('confirmPassword').value;
     let errorMessage = document.getElementById('errorMessage');
+    const mobileInput = document.getElementById('mobile').value;
 
     // Basic validation
     if (!email || !password || !confirmPassword) {
@@ -19,9 +20,16 @@ document.querySelector('#registerForm').addEventListener('submit', function(even
     if(password != confirmPassword){
         errorMessage.textContent = 'Password and confirm password does not match.';
     }
+
+    // Regular expression to check if the input is exactly 10 digits
+    const mobilePattern = /^\d{10}$/;
+
+    if (!mobilePattern.test(mobileInput)) {
+        errorMessage.textContent = 'Please enter a valid 10-digit mobile number.';
+    }
+
     else{
         showSuccessModal();
-        console.log("working");
     }
   
      // Get existing values from localStorage
